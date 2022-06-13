@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <!-- Styles -->
         
     </head>
@@ -16,8 +17,14 @@
         <div class="container">
             <div class="row row-cols-5">
                 @forelse($movies as $movie)
-                <div class="col">
-                    <h1>{{$movie->title}}</h1>   
+                <div class="col box text-center">
+                    <h3>{{$movie->title}}</h3> 
+                    <div>
+                        Original title: {{$movie->original_title}}
+                        <p>Rating: {{$movie->vote}}</p>
+                        <p>Country: {{$movie->nationality}}</p>
+                        <p>Release date: {{$movie->date}}</p>
+                    </div>  
                 </div>
                 @empty
                 <p>nothing</p>
